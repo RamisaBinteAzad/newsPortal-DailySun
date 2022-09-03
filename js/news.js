@@ -34,7 +34,7 @@ const loadNewsDetail = (categoryId) => {
 }
 const displayNewsDetail = (allNews) => {
      
-    console.log(allNews);
+    console.log(allNews.length);
     const newsDetailsContainer = document.getElementById('news-details-container');
     newsDetailsContainer.innerHTML = ``;
      
@@ -113,17 +113,7 @@ const loadNewsDetailsAll = newsId => {
         .then(data => displayNewsDetailsAll (data.data[0]))
         .catch(error =>console.log(error))
 }
-// {_id: '0282e0e58a5c404fbd15261f11c2ab6b', others_info: {…}, category_id: '03', rating: {…}, total_view: 488, …}
-// author: {name: 'Jimmy Dane', published_date: '2022-08-24 17:27:34', img: 'https://images.unsplash.com/photo-1633332755192-72…HxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80'}
-// category_id: "03"
-// details: "Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military aid for Kyiv as Ukraine marked its independence day six months after Russia invaded the country.'The United States of America is committed to supporting the people of Ukraine as they continue the fight to defend their sovereignty. As part of that commitment, I am proud to announce our biggest tranche of security assistance to date: approximately $2."
-// image_url: "https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png"
-// others_info: {is_todays_pick: false, is_trending: true}
-// rating: {number: 4.5, badge: 'Excellent'}
-// thumbnail_url: "https://i.ibb.co/QnwC4sG/unsplash-Eh-Tc-C9s-YXsw-11.png"
-// title: "Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet"
-// total_view: 488
-// _id: "0282e0e58a5c404fbd15261f11c2ab6b"
+ 
 const displayNewsDetailsAll =newsAll => {
     console.log(newsAll);
    const modalTitle = document.getElementById('newsDetailModalLabel');
