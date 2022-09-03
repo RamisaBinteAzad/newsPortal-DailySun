@@ -7,12 +7,14 @@
 body{
     background-color: #DDDDDD;
     font-family: 'Roboto', sans-serif;
+    font-size:1rem;
     
 }
 .font-family-style {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size:1rem;
+    
+  
 }
 .bg-text-color{
     background-color:  #5D5FEF;
@@ -20,11 +22,122 @@ body{
 } 
 .text-color {
     color:#5D5FEF;
-   
-     
 }
+ 
  #color-change-link{
     color:#5D5FEF;
     
  }
+ .fa-star.filled{
+   color:white;
+   
+}
+ 
+.img-width {
+    width:30%;
+    height:30%;
+}
+.author-div-width {
+    width:35%;
+}
+a{
+    color:gray;
+}
+a:hover{
+    color:#5D5FEF;
+}
+ 
+@media screen and (max-width:575px) {
+    h1,
+    h2 {
+        font-size: 1rem;
+
+    }
+
+    p,small{
+        font-size: 0.8rem;
+    }
+    /* .nav-link{
+        font-size: 0.6rem;
+    } */
+
+    header p {
+        font-size: 0.56rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+    
+ 
+    .fa-star-half-stroke,.fa-star{
+        width:14%;
+    }
+     
+
+
+
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    h1,
+    h2 {
+        font-size: 1.7rem;
+
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    p,small {
+        font-size: 1rem;
+    }
+    
+
+    h5 {
+        font-size: 1.3rem;
+    }
+    footer  small{
+        font-size: 0.84rem;
+    }
+
+
+
+}
+
+@media screen and (min-width:992px) and (max-width:2020px) {
+
+    
+
+    h1,
+    h2 {
+        font-size: 1.7rem;
+
+    }
+    .nav-link{
+        font-size: 1.01rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    p,small {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 1.7rem;
+    }
+    footer  small{
+        font-size: 0.84rem;
+    }
+
+     
+
+
+}
+
+  
  

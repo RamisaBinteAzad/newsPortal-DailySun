@@ -6,50 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Sun</title>
     <link rel="shortcut icon" href="./image/icon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/572b4e8f6d.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="container ">
-        <nav class="navbar navbar-expand-lg ">
-            <div class="container mt-4">
-              <a class="navbar-brand py-2 px-3 bg-text-color font-family-style   rounded-2 fw-bold text-white" href="#">Daily</a>
-              <span class="navbar-brand ms-0 text-color font-family-style  fw-bold">Sun</span>
-             
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-      
-              <div class="collapse  navbar-collapse mt-3" id="navbarTogglerDemo02">
-                <ul class="navbar-nav  me-lg-5 ms-auto ">
-                  <li class="nav-item">
-                    <a class=" text-decoration-none active me-lg-5 text-muted active  " aria-current="page" href="index.html">News</a>
-                    
-                  </li>
-                  <li class="nav-item">
-                    <a class=" text-decoration-none fw-bold me-lg-5 " id="color-change-link" href="blogs.html">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <img src="./image/Avatar.png" class="h-75   img-fluid" alt="">
-                </li>
-               
-                </ul>
+  <header class="container ">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container mt-4">
+          <div>
+            <a class="navbar-brand py-2 px-3 me-2 bg-text-color font-family-style   rounded-2 fw-bold text-white"
+              href="#">Daily </a>
+            <span class="navbar-brand ms-0 text-color font-family-style  fw-bold">Sun</span>
+          </div>
+         
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse  navbar-collapse mt-3" id="navbarTogglerDemo02">
+            <ul class="navbar-nav  me-lg-5 ms-auto ">
+              <li class="nav-item">
+                <a class=" text-decoration-none active me-lg-5 text-muted active  " aria-current="page" href="index.html">News</a>
                 
-      
-                
-      
-              </div>
-              
-      
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class=" text-decoration-none fw-bold me-lg-5 " id="color-change-link" href="blogs.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+                <img src="./image/Avatar.png" class="h-75   img-fluid" alt="">
+            </li>
+           
+            </ul>
             
+  
             
-          </nav>
-          <hr class="mt-0 fs-bold h-75">
+  
+          </div>
+          
+  
+        </div>
         
-    </header>
+        
+      </nav>
+      <hr class="mt-0 fs-bold h-75">
+    
+</header>
+  <main class="container">
+    <section class="container">
+      <div class="mt-1 row row-cols-1 row-cols-sm-1  row-cols-md-1 row-cols-lg-1 g-4" id="news-details-container">
+        <div class="col">
+          <div class="card">
+            <div class="row mx-auto">
+              <div class="col-md-3    col-lg-3 d-flex justify-content-center align-items-center">
+                <img src="./image/unsplash_EhTcC9sYXsw.png"
+                  class=" img-fluid  mx-auto rounded-start  " alt="...">
+              </div>
+              <div class="col-md-9  col-lg-9 mx-auto ">
+                <div class="card-body ">
+                  <h5 class="text-dark pt-4 fw-bold ">Fundamental Of UI/UX Design2</h5>
+                  <p class=" text-muted card-text "> From our favourite UK influencers to the best missives from Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and for even more inspiration, do head to our separate black fashion influencer round-up.</p>
+                   
+ 
+                  <!-- <p class="card-text h5 fw-bold"><small class="text-primary">Price : 20$</small></h6> -->
+                    <div class="d-flex justify-content-between align-items-center  ">
+                      <div class="d-flex justify-content-center align-items-center ">
+                        <img src="./image/Avatar.png" class="img-fluid" alt="">
+                        <div class="d-flex flex-column justify-content-center align-items-center ps-3">
+                          <p class="card-text h5 pt-3"><small class="text-black">Jane Coper</small></p>
+                          <p p-3><small>June 10,2022</small></p>
+                        </div>
+                        
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center ">
+                        <i class="fa-regular fa-eye"></i>
+                        <p class="card-text h5 p-3 fw-bold"><small class="text-black"><span>1.5</span>M</small></p>
+                         
+                      </div>
+                     
+                      <div>
+                        <i class="fa-regular fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        
+                        </div>
+                       
+                      <!-- <p class="card-text h5 "><small class="text-black">Jane Coper</small></p>  -->
+                      <a href="#"><i class=" text-color pe-2 fa fa-arrow-right"></i></a> 
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+      </div>
+    </section>
+  </main> 
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
