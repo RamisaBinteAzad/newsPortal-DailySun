@@ -2,7 +2,7 @@ const loadNewsCategories = () => {
     fetch('https://openapi.programming-hero.com/api/news/categories')
         .then(res => res.json())
         .then(data => displayNewsCategories(data.data.news_category))
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
 }
 const displayNewsCategories = categories => {
 
@@ -11,10 +11,10 @@ const displayNewsCategories = categories => {
     categories.forEach(category => {
 
         loadNewsDetail(`${category.category_id}`);
-        // console.log(category.category_id)
+        
         const categoryli = document.createElement('li');
 
-        // 
+        
         categoryli.innerHTML = `
        
         <li class="nav-item me-4"  >
@@ -32,14 +32,15 @@ const loadNewsDetail = (categoryId, link) => {
 
     fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId}`)
         .then(res => res.json())
-        .then(data => displayNewsDetail(data.data, link));
+        .then(data => displayNewsDetail(data.data, link))
+        .catch(error => console.log(error));
 }
 const displayNewsDetail = (allNews, categoryName) => {
-    console.log(allNews);
+    
     allNews.sort((a, b) => b.total_view - a.total_view);
-    console.log(allNews);
+    
     const categoryNews = document.getElementById('categoryNews');
-    // ?  phone.mainFeatures.displaySize :'No Storage Information Found'
+     
 
     categoryNews.innerHTML = `
     <div class="w-100 mt-3 rounded-2 bg-white d-flex justify-content-start align-items-center">
@@ -99,7 +100,7 @@ const displayNewsDetail = (allNews, categoryName) => {
                       <i class="fa-regular fa-star"></i>
                       <i class="fa-regular fa-star"></i>
                       </div>
-                      <div class='pt-3 fw-bold ps-2'>
+                      <div class='pt-3 fw-bold me-sm-3'>
                       <p>${news.rating.number}</p>
                       </div>
                    
@@ -137,15 +138,15 @@ const displayNewsDetailsAll = newsAll => {
 
     const newsDetailsAll = document.getElementById('news-details');
     newsDetailsAll.innerHTML = `
-    <p class="text-muted font-family-style"> <span class="text-dark fw-bold">Author:</span> ${newsAll.author.name !== null && newsAll.author.name != '' ? newsAll.author.name : 'No Data AvailAble'}</p>
-    <p class="font-family-style text-muted"> <span class="text-dark fw-bold">Published Date:</span> ${newsAll.author.published_date ? newsAll.author.published_date : 'No Data AvailAble'}</p>
+    <p class="text-muted  "> <span class="text-dark fw-bold">Author:</span> ${newsAll.author.name !== null && newsAll.author.name != '' ? newsAll.author.name : 'No Data AvailAble'}</p>
+    <p class="  text-muted"> <span class="text-dark fw-bold">Published Date:</span> ${newsAll.author.published_date ? newsAll.author.published_date : 'No Data AvailAble'}</p>
     <img src="${newsAll.image_url}"
                     class=" img-fluid w-100 p-2 mx-auto rounded-start  " alt="...">
        
-        <p class="font-family-style text-muted ">${newsAll.details.length > 70 ? newsAll.details.slice(0, 70) + '...' : newsAll.details}</p>
+        <p class="  text-muted ">${newsAll.details.length > 70 ? newsAll.details.slice(0, 70) + '...' : newsAll.details}</p>
         <div class="d-flex   justify-content-between align-items-center">
-        <p class="font-family-style text-muted"> <span class="text-dark fw-bold">Total View:</span> ${newsAll.total_view ? newsAll.total_view : 'No Data AvailAble'}</p>
-        <p class="font-family-style text-muted "> <span class="text-dark fw-bold">Rating:</span> ${newsAll.rating ? newsAll.rating.number : 'No Data AvailAble'}</p>
+        <p class="  text-muted"> <span class="text-dark fw-bold">Total View:</span> ${newsAll.total_view ? newsAll.total_view : 'No Data AvailAble'}</p>
+        <p class="  text-muted "> <span class="text-dark fw-bold">Rating:</span> ${newsAll.rating ? newsAll.rating.number : 'No Data AvailAble'}</p>
     </div>
  
    
