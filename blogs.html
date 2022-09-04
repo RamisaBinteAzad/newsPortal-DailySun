@@ -56,46 +56,75 @@
 </header>
   <main class="container">
     <section class="container">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2  g-4">
-        <div class="col">
-          <div class="card text-bg-light mb-3"  >
-            <div class="card-header"></div>
+      <div class="mt-4 mb-4 row row-cols-1 row-cols-md-2 row-cols-lg-2  g-4">
+        <div class="col ">
+          <div class="card h-100 mb-3 text-bg-light mb-3"  >
+            <div class=" card-header text-muted fw-bold"> Blog 1</div>
             <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="mt-2 card-title text-color fw-bold"> What are the differences between var,let and const in Javascript?</h5>
+              <p class="card-text mt-3">The differences between var,let and const are :The scope of a var variable is functional scope,it can be updated and re-declared into the scope and it can be declared without initialization.
+                <br>
+              On the other hand, the scope of a  let  variable is block scope,it can be updated but cannot be re-declared into the scope and it can be declared without initialization.
+              <br>
+              And the scope of a const variable  is block scope, it cannot be updated or re-declared into the scope and cannot be declared without initialization. </p>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card text-bg-light mb-3" >
-            <div class="card-header">Header</div>
+        <div class="col   ">
+          <div class="card h-100 mb-3 text-bg-light  "  >
+            <div class=" card-header text-muted fw-bold"> Blog 2</div>
             <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="mt-2 card-title text-color fw-bold"> What are the differences between arrow  and  regular function in Javascript?</h5>
+              <p class="card-text mt-3">In regular function, this value is dynamic, In arrow function it equals to this of the outer function.
+                <br>
+                In regular function, arguments will give you list of parameter passed in function, In arrow function arguments is not defined.
+              <br>
+              Regular functions can be used as constructors, using the new keyword. But the lexical resolution of this inside arrow functions is that they cannot be used as constructors. Using new with an arrow function results in a TypeError.
+              <br>
+              In regular function, you always have to return any value, but in Arrow function you can skip return keyword and write in single line. </p>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card text-bg-light mb-3"  >
-            <div class="card-header">Header</div>
+        <div class="col   p-3">
+          <div class="card h-100 mb-3 text-bg-light  "  >
+            <div class=" card-header text-muted fw-bold"> Blog 3</div>
             <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="mt-2 card-title text-color fw-bold"> What are the differences among map,foreach,find and filter?</h5>
+              <p class="card-text mt-3">
+                Function .map() is a manipulative   can modify each element’s content in an array that it is called on. This function returns a new array with modified values, the array that it is called on will stay still. This function is useful for adding a little change to an already existing array.
+                <br>
+                Function .forEach() is another form of just a plain for loop that can be used to iterate through array items. This case of a function is used for more complex arrays, for example, an array of objects with a lot of entries than just an array of integers.
+                <br>
+                Function .filter() is a search function that returns all the elements that fulfil the assigned condition. You can search by simple terms, for example, that element is equal to a certain integer, or by more advanced terms,
+               <br>
+               Function .find() is also a search function like the previous but they differ in one small detail — this function returns only one match in an array. If in an array is more than one result, the function will return the first that has matched.
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card text-bg-light mb-3" >
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col   p-3">
+          <div class="card h-100 mb-3 text-bg-light  "  >
+            <div class=" card-header text-muted fw-bold"> Blog 4</div>
+            <div class="card-body mt-2">
+              <h5 class="mt-2 card-title text-color fw-bold"> Why should we use template string?</h5>
+              <p class="card-text mt-3">
+                Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript.  
+                <br>
+                It allows us to create strings that are complex and contain dynamic elements.
+                <br>
+                Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.
             </div>
           </div>
         </div>
       </div>
     </section>
   </main> 
+  <footer class="mx-auto   container-fluid p-5  bg-white">
+
+    <div class="  container  d-flex justify-content-center align-items-center">
+      <p class="font-family-style text-dark text-center ">Copyright &copy; 2022 News Portal</p>
+    </div>
+
+  </footer>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
