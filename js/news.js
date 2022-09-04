@@ -44,7 +44,7 @@ const displayNewsDetail = (allNews, categoryName) => {
 
     categoryNews.innerHTML = `
     <div class="w-100 mt-3 rounded-2 bg-white d-flex justify-content-start align-items-center">
-        <h6 class="ps-4 text-dark pt-3 fw-bold ">${allNews.length === 0 ? 'NO' : allNews.length} items found for Category ${categoryName === undefined ? 'All News' : categoryName}</h6>
+        <h6 class="ps-4 text-dark pt-3 fw-bold ">${allNews.length === 0 ? 'NO' : allNews.length} items found for Category ${categoryName === undefined ? 'Default' : categoryName}</h6>
       </div>
     `
 
@@ -78,7 +78,8 @@ const displayNewsDetail = (allNews, categoryName) => {
                             <img src="${news.author.img}" class="img-fluid img-width me-2 rounded-circle" alt="">
                                 <div class="d-flex flex-column   align-self-center  ">
                                     <p class="card-text h5 fw-bold pt-3"><small class="text-black">${news.author.name !== null && news.author.name != '' ? news.author.name : 'No Data AvailAble'} </small></p>
-                                    <p  ><small>${news.author.published_date}</small></p>
+                                     
+                                    <p  ><small>${news.author.published_date? news.author.published_date : 'No Data AvailAble'}</small></p>
                                 </div>
                          
                         
