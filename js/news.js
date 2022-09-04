@@ -9,13 +9,14 @@ const displayNewsCategories = categories => {
     const newsCategories = document.getElementById('news-categories');
      
     categories.forEach(category => {
+       
         loadNewsDetail(`${category.category_id}`);
     // console.log(category.category_id)
         const categoryli = document.createElement('li');
-       
+        
         // 
         categoryli.innerHTML = `
-        
+       
         <li class="nav-item me-4"  >
             <a class=" text-decoration-none  pe-3 me-3" aria-current="page"   href="#" onclick="loadNewsDetail('${category.category_id}','${category.category_name}')">${category.category_name}</a>
         </li>
@@ -26,20 +27,21 @@ const displayNewsCategories = categories => {
         
     })
 }
-const loadNewsDetail = (categoryId,link) => {
-    
+const loadNewsDetail = (categoryId, link) => {
+    processSearch();
+   
      fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId }`)
     .then(res => res.json())
     .then(data =>displayNewsDetail(data.data,link));
 }
 const displayNewsDetail = (allNews, categoryName) => {
- 
+     console.log(allNews)
     const categoryNews = document.getElementById('categoryNews');
     // ?  phone.mainFeatures.displaySize :'No Storage Information Found'
-     
+    
     categoryNews.innerHTML = `
     <div class="w-100 mt-3 rounded-2 bg-white d-flex justify-content-start align-items-center">
-        <h6 class="ps-4 text-dark pt-3 fw-bold ">${allNews.length ===0 ?'NO':allNews.length} items found for Category ${categoryName}</h6>
+        <h6 class="ps-4 text-dark pt-3 fw-bold ">${allNews.length ===0 ?'NO':allNews.length} items found for Category ${categoryName===undefined?'All News':categoryName}</h6>
       </div>
     `
     
@@ -73,7 +75,7 @@ const displayNewsDetail = (allNews, categoryName) => {
                             <img src="${news.author.img}" class="img-fluid img-width me-2 rounded-circle" alt="">
                                 <div class="d-flex flex-column   align-self-center  ">
                                     <p class="card-text h5 fw-bold pt-3"><small class="text-black">${news.author.name!==null && news.author.name!='' ? news.author.name: 'No Data AvailAble'} </small></p>
-                                    <p  ><small>June 10,2022</small></p>
+                                    <p  ><small>${news.author.published_date}</small></p>
                                 </div>
                          
                         
@@ -112,9 +114,11 @@ const displayNewsDetail = (allNews, categoryName) => {
         </div>
       </div>
             `;
-            newsDetailsContainer.appendChild(newsDetailsDiv);
+        newsDetailsContainer.appendChild(newsDetailsDiv);
+       
 
     });
+    toggleSpinner(false);
 }
 const loadNewsDetailsAll = newsId => {
     fetch(`https://openapi.programming-hero.com/api/news/${newsId}`)
@@ -146,6 +150,18 @@ const displayNewsDetailsAll =newsAll => {
 
    
 }
- 
+const processSearch = () => {
+    toggleSpinner(true);
+    
+}
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+    }
+}
  
 loadNewsCategories();
