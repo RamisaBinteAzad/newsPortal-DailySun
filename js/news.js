@@ -17,7 +17,7 @@ const displayNewsCategories = categories => {
         categoryli.innerHTML = `
         
         <li class="nav-item me-4"  >
-            <a class=" text-decoration-none  pe-3 me-3" aria-current="page"   href="#" onclick="loadNewsDetail('${category.category_id}')">${category.category_name}</a>
+            <a class=" text-decoration-none  pe-3 me-3" aria-current="page"   href="#" onclick="loadNewsDetail('${category.category_id}','${category.category_name}')">${category.category_name}</a>
         </li>
         `
          
@@ -26,16 +26,25 @@ const displayNewsCategories = categories => {
         
     })
 }
-const loadNewsDetail = (categoryId) => {
-  
+const loadNewsDetail = (categoryId,link) => {
+    
      fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId }`)
     .then(res => res.json())
-    .then(data =>displayNewsDetail(data.data));
+    .then(data =>displayNewsDetail(data.data,link));
 }
-const displayNewsDetail = (allNews) => {
+const displayNewsDetail = (allNews, categoryName) => {
+ 
+    const categoryNews = document.getElementById('categoryNews');
+    // ?  phone.mainFeatures.displaySize :'No Storage Information Found'
      
-    console.log(allNews.length);
+    categoryNews.innerHTML = `
+    <div class="w-100 mt-3 rounded-2 bg-white d-flex justify-content-start align-items-center">
+        <h6 class="ps-4 text-dark pt-3 fw-bold ">${allNews.length ===0 ?'NO':allNews.length} items found for Category ${categoryName}</h6>
+      </div>
+    `
+    
     const newsDetailsContainer = document.getElementById('news-details-container');
+
     newsDetailsContainer.innerHTML = ``;
      
     allNews .forEach(news => {
@@ -115,7 +124,7 @@ const loadNewsDetailsAll = newsId => {
 }
  
 const displayNewsDetailsAll =newsAll => {
-    console.log(newsAll);
+     
    const modalTitle = document.getElementById('newsDetailModalLabel');
    modalTitle.innerText = newsAll.title;
    
